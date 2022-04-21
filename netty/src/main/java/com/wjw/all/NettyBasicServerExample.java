@@ -7,5 +7,9 @@ package com.wjw.all;
  */
 public class NettyBasicServerExample {
 
+    public static void main(String[] args) {
+
+    }
+
 
 }
