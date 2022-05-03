@@ -15,6 +15,7 @@
     <modules>
         <module>consumer-test</module>
         <module>provider-test</module>
+        <module>all</module>
     </modules>
 
     <dependencyManagement>
@@ -24,6 +25,13 @@
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>1.18.10</version>
+            </dependency>
+
+            <!--netty-->
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-all</artifactId>
+                <version>4.1.55.Final</version>
             </dependency>
 
         </dependencies>
