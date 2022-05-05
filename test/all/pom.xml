@@ -12,14 +12,12 @@
     <artifactId>all</artifactId>
     <version>1.0</version>
 
-
     <dependencies>
-
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
+            <version>4.1.55.Final</version>
         </dependency>
-
 
     </dependencies>
 </project>

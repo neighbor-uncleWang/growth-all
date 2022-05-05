@@ -23,7 +23,11 @@
         <netty.version>4.1.55.Final</netty.version>
         <spring.version>5.2.8.RELEASE</spring.version>
         <dubbo.version>3.0.2.1</dubbo.version>
-
+        <test.api>1.0</test.api>
+        <logback.version>1.1.2</logback.version>
+        <tomcat.version>8.5.16</tomcat.version>
+        <tomcat.embed.version>8.5.23</tomcat.embed.version>
+        <projectlombok.version>1.18.10</projectlombok.version>
     </properties>
 
     <dependencyManagement>
@@ -66,7 +70,13 @@
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
-                <version>1.18.10</version>
+                <version>${projectlombok.version}</version>
+            </dependency>
+
+            <dependency>
+                <artifactId>api-test</artifactId>
+                <groupId>org.wjw.test</groupId>
+                <version>${test.api}</version>
             </dependency>
 
 
@@ -74,24 +84,26 @@
             <dependency>
                 <groupId>org.apache.tomcat.embed</groupId>
                 <artifactId>tomcat-embed-core</artifactId>
-                <version>8.5.23</version>
+                <version>${tomcat.embed.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.tomcat</groupId>
                 <artifactId>tomcat-jasper</artifactId>
-                <version>8.5.16</version>
+                <version>${tomcat.version}</version>
             </dependency>
             <dependency>
                 <groupId>ch.qos.logback</groupId>
                 <artifactId>logback-classic</artifactId>
-                <version>1.1.2</version>
+                <version>${logback.version}</version>
             </dependency>
             <dependency>
                 <groupId>ch.qos.logback</groupId>
                 <artifactId>logback-core</artifactId>
-                <version>1.1.2</version>
+                <version>${logback.version}</version>
             </dependency>
+
         </dependencies>
     </dependencyManagement>
+
 
 </project>
