@@ -23,6 +23,7 @@ public class RpcService {
 
     @Test
     public void test1() {
+        System.out.println("========开始=============");
         System.out.println(userService.queryUser("WUYA"));
     }
 
