@@ -17,6 +17,7 @@
         <module>provider-test</module>
         <module>all</module>
         <module>api-test</module>
+        <module>utils</module>
     </modules>
 
     <properties>
