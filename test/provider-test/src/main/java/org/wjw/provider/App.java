@@ -1,4 +1,4 @@
-package org.wjw.test;
+package org.wjw.provider;
 
 /**
  * Hello world!
