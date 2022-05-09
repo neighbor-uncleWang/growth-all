@@ -13,10 +13,10 @@ public class SpiTest {
 
     @Test
     public void adaptive() {
-        ActivateApi adaptiveExtension = ExtensionLoader.getExtensionLoader(ActivateApi.class).getAdaptiveExtension();
-//        ExtensionLoader<ActivateApi> extensionLoader = ExtensionLoader.getExtensionLoader(ActivateApi.class);
-//        ActivateApi adaptiveExtension = extensionLoader.getExtension("dubbo");
-        System.out.println(adaptiveExtension.getClass());
+        ActivateApi activateApi1 = ExtensionLoader.getExtensionLoader(ActivateApi.class).getAdaptiveExtension();
+
+        ExtensionLoader<ActivateApi> extensionLoader = ExtensionLoader.getExtensionLoader(ActivateApi.class);
+        ActivateApi activateApi2 = extensionLoader.getExtension("dubbo");
     }
 
 }
