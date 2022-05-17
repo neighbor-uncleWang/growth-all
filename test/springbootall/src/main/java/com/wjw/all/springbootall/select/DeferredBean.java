@@ -1,11 +1,10 @@
 package com.wjw.all.springbootall.select;
 
+
 /**
- * @Classname DeferredBean
- * @Description TODO
- * @Author 无涯
- * Date 2021/10/30 21:01
- * Version 1.0
+ * @author laoWang
+ * @ClassName DeferredBean.java
+ * @createTime 2022-05-16 19:21
  */
 public class DeferredBean {
 }
