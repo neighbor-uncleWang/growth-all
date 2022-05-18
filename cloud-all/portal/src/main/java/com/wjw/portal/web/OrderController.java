@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 /**
+ * 订单web
+ *
  * @author laoWang
  * @ClassName OrderController.java
  * @createTime 2022-05-18 21:37
@@ -40,22 +42,22 @@ public class OrderController {
     }*/
 
     @GetMapping
-    public String order(){
+    public String order() {
         log.info("begin do order");
 
        /* ServiceInstance si=loadbalancerClient.choose("goods-service");
         String url=String.format("http://%s:%s",si.getHost(),si.getPort());
         log.info("ribbon-url:{}",url);*/
 
-        String url="http://goods-service/goods";
-        String goodsInfo=restTemplate.getForObject(url,String.class);
-        String promotionInfo=restTemplate.getForObject("http://marking-service/promotion",String.class);
-        MultiValueMap<String,Object> param=new LinkedMultiValueMap<>();
-        param.add("goodsInfo",goodsInfo);
-        param.add("pomotionInfo",promotionInfo);
+        String url = "http://goods-service/goods";
+        String goodsInfo = restTemplate.getForObject(url, String.class);
+        String promotionInfo = restTemplate.getForObject("http://marking-service/promotion", String.class);
+        MultiValueMap<String, Object> param = new LinkedMultiValueMap<>();
+        param.add("goodsInfo", goodsInfo);
+        param.add("pomotionInfo", promotionInfo);
 
-        HttpEntity<MultiValueMap<String,Object>> httpEntity=new HttpEntity<>(param,new HttpHeaders());
-        ResponseEntity<String> response=restTemplate.postForEntity("http://order-service/order",httpEntity,String.class);
+        HttpEntity<MultiValueMap<String, Object>> httpEntity = new HttpEntity<>(param, new HttpHeaders());
+        ResponseEntity<String> response = restTemplate.postForEntity("http://order-service/order", httpEntity, String.class);
         return response.getBody();
     }
 }
