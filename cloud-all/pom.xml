@@ -18,6 +18,7 @@
     <modules>
         <module>biz-service</module>
         <module>portal</module>
+        <module>eureka-server</module>
     </modules>
 
     <properties>
