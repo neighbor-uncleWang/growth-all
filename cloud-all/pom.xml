@@ -19,6 +19,7 @@
         <module>biz-service</module>
         <module>portal</module>
         <module>eureka-server</module>
+        <module>srvice-api</module>
     </modules>
 
     <properties>

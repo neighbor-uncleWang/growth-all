@@ -3,7 +3,9 @@ package com.wjw.good.web;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.wjw.api.goods.IGoodsService;
 
 /**
  * 商品web
@@ -13,8 +15,9 @@ import org.springframework.web.bind.annotation.RestController;
  * @createTime 2022-05-18 21:41
  */
 @Slf4j
-@RestController
-public class GoodsService {
+@RestController()
+@RequestMapping("/goodsService")
+public class GoodsService implements IGoodsService {
 
     @Value("${server.port}")
     private String port;
@@ -25,6 +28,7 @@ public class GoodsService {
      * @return
      */
     @GetMapping("/goods")
+    @Override
     public String getGoodsById() {
         log.info("收到请求，端口为：{}", port);
         return "返回商品信息";

@@ -14,6 +14,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
+import org.wjw.api.goods.IGoodsService;
+import org.wjw.api.marking.IPromotionService;
+import org.wjw.api.order.IOrderService;
 
 import java.util.List;
 import java.util.Random;
@@ -30,11 +33,20 @@ import java.util.Random;
 @RequestMapping("/order")
 public class OrderController {
 
-    @Autowired
-    private RestTemplate restTemplate;
+//    @Autowired
+//    private RestTemplate restTemplate;
+//
+//    @Autowired
+//    private LoadBalancerClient loadbalancerClient;
 
     @Autowired
-    private LoadBalancerClient loadbalancerClient;
+    private IGoodsService goodsService;
+
+    @Autowired
+    private IPromotionService promotionService;
+
+    @Autowired
+    private IOrderService orderService;
 
 //    @Value("${goodsService.serverList}.split(',')")
 //    private List<String> goodsList;
@@ -46,23 +58,35 @@ public class OrderController {
 //        return servers[random.nextInt(servers.length)];
 //    }
 
+//    @GetMapping
+//    public String order() {
+//        log.info("begin do order");
+        //老旧的使用方式
+//        ServiceInstance si=loadbalancerClient.choose("goods-service");
+//        String url=String.format("http://%s:%s/goods",si.getHost(),si.getPort());
+//        log.info("ribbon-url:{}",url);
+//
+////        String url = getGoodsServer(); //"http://goods-service/goods";
+//        String goodsInfo = restTemplate.getForObject(url, String.class);
+////        String promotionInfo = restTemplate.getForObject("http://marking-service/promotion", String.class);
+////        MultiValueMap<String, Object> param = new LinkedMultiValueMap<>();
+////        param.add("goodsInfo", goodsInfo);
+////        param.add("pomotionInfo", promotionInfo);
+////
+////        HttpEntity<MultiValueMap<String, Object>> httpEntity = new HttpEntity<>(param, new HttpHeaders());
+////        ResponseEntity<String> response = restTemplate.postForEntity("http://order-service/order", httpEntity, String.class);
+////        return response.getBody();
+//        return "1";
+//    }
+
     @GetMapping
     public String order() {
         log.info("begin do order");
-        ServiceInstance si=loadbalancerClient.choose("goods-service");
-        String url=String.format("http://%s:%s/goods",si.getHost(),si.getPort());
-        log.info("ribbon-url:{}",url);
 
-//        String url = getGoodsServer(); //"http://goods-service/goods";
-        String goodsInfo = restTemplate.getForObject(url, String.class);
-//        String promotionInfo = restTemplate.getForObject("http://marking-service/promotion", String.class);
-//        MultiValueMap<String, Object> param = new LinkedMultiValueMap<>();
-//        param.add("goodsInfo", goodsInfo);
-//        param.add("pomotionInfo", promotionInfo);
-//
-//        HttpEntity<MultiValueMap<String, Object>> httpEntity = new HttpEntity<>(param, new HttpHeaders());
-//        ResponseEntity<String> response = restTemplate.postForEntity("http://order-service/order", httpEntity, String.class);
-//        return response.getBody();
-        return "1";
+        String goodsById = goodsService.getGoodsById();
+//        String promotionById = promotionService.getPromotionById();
+//        String order = orderService.createOrder(goodsById, promotionById);
+
+        return goodsById;
     }
 }
