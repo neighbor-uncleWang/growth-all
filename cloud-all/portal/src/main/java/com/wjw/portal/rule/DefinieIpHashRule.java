@@ -4,6 +4,7 @@ import com.netflix.client.config.IClientConfig;
 import com.netflix.loadbalancer.AbstractLoadBalancerRule;
 import com.netflix.loadbalancer.ILoadBalancer;
 import com.netflix.loadbalancer.Server;
+import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
@@ -14,6 +15,7 @@ import java.util.List;
  * @ClassName DefinieIpHashRule.java
  * @createTime 2022-05-21 10:57
  */
+@Component
 public class DefinieIpHashRule extends AbstractLoadBalancerRule {
 
     @Override
@@ -23,7 +25,7 @@ public class DefinieIpHashRule extends AbstractLoadBalancerRule {
 
     @Override
     public Server choose(Object key) {
-        return null;
+        return choose(getLoadBalancer(),key);
     }
 
 
