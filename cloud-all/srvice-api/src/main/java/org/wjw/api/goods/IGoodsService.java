@@ -5,11 +5,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 /**
  * 商品
+ *
  * @author laoWang
  * @ClassName IGoodsService.java
  * @createTime 2022-05-22 15:43
  */
-@FeignClient(name = "goods",path = "/goodsService")
+@FeignClient(name = "goods", value = "goods", path = "/goodsService")
 public interface IGoodsService {
     /**
      * 根据ID查询商品信息

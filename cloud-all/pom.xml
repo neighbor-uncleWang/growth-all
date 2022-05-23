@@ -44,17 +44,30 @@
         </dependency>
 
         <dependency>
+            <groupId>io.github.openfeign</groupId>
+            <artifactId>feign-okhttp</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.16</version>
             <scope>compile</scope>
         </dependency>
+        <!--单独引入使用-->
+        <!--        <dependency>-->
+        <!--            <groupId>com.alibaba.nacos</groupId>-->
+        <!--            <artifactId>nacos-client</artifactId>-->
+        <!--            <version>1.4.3</version>-->
+        <!--        </dependency>-->
 
+        <!--        集成spring cloud-->
         <dependency>
-            <groupId>com.alibaba.nacos</groupId>
-            <artifactId>nacos-client</artifactId>
-            <version>1.4.3</version>
+            <groupId>com.alibaba.boot</groupId>
+            <artifactId>nacos-config-spring-boot-starter</artifactId>
+            <version>0.2.8</version>
         </dependency>
+
     </dependencies>
 
     <dependencyManagement>

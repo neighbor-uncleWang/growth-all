@@ -3,6 +3,7 @@ package com.wjw.order.web;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.wjw.api.goods.IGoodsService;
@@ -17,6 +18,7 @@ import org.wjw.api.order.IOrderService;
  */
 @Slf4j
 @RestController
+@RequestMapping("/orderService")
 public class OrderService implements IOrderService {
 
     /**
@@ -25,7 +27,7 @@ public class OrderService implements IOrderService {
      * @param pomotionInfo
      * @return
      */
-//    @PostMapping("/order")
+    @PostMapping("/order")
     @Override
     public String createOrder(@RequestParam String goodsInfo, @RequestParam String pomotionInfo) {
         log.info("开始创建订单,请求参数,{},{}", goodsInfo, pomotionInfo);
