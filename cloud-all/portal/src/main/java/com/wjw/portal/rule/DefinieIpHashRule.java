@@ -15,7 +15,7 @@ import java.util.List;
  * @ClassName DefinieIpHashRule.java
  * @createTime 2022-05-21 10:57
  */
-@Component
+//@Component
 public class DefinieIpHashRule extends AbstractLoadBalancerRule {
 
     @Override
