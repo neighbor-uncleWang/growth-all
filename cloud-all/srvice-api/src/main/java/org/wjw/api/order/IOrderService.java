@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @ClassName IOrderService.java
  * @createTime 2022-05-22 15:45
  */
-@FeignClient(name="order-service")
+@FeignClient(name="order")
 public interface IOrderService {
 
     /**

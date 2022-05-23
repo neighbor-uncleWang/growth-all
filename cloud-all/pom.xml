@@ -50,6 +50,11 @@
             <scope>compile</scope>
         </dependency>
 
+        <dependency>
+            <groupId>com.alibaba.nacos</groupId>
+            <artifactId>nacos-client</artifactId>
+            <version>1.4.3</version>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>

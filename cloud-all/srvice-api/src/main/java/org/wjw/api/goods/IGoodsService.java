@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
  * @ClassName IGoodsService.java
  * @createTime 2022-05-22 15:43
  */
-@FeignClient(name = "goods-service",path = "/goodsService")
+@FeignClient(name = "goods",path = "/goodsService")
 public interface IGoodsService {
     /**
      * 根据ID查询商品信息

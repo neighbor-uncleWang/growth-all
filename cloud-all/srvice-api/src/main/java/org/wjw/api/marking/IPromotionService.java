@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
  * @ClassName IPromotionService.java
  * @createTime 2022-05-22 15:45
  */
-@FeignClient(name = "marking-service", path = "/promotionService")
+@FeignClient(name = "marking", path = "/promotionService")
 public interface IPromotionService {
 
     @GetMapping("/promotion")

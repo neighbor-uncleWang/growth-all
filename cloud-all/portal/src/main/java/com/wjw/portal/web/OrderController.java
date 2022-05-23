@@ -62,13 +62,13 @@ public class OrderController {
 //    public String order() {
 //        log.info("begin do order");
         //老旧的使用方式
-//        ServiceInstance si=loadbalancerClient.choose("goods-service");
+//        ServiceInstance si=loadbalancerClient.choose("goods");
 //        String url=String.format("http://%s:%s/goods",si.getHost(),si.getPort());
 //        log.info("ribbon-url:{}",url);
 //
-////        String url = getGoodsServer(); //"http://goods-service/goods";
+////        String url = getGoodsServer(); //"http://goods/goods";
 //        String goodsInfo = restTemplate.getForObject(url, String.class);
-////        String promotionInfo = restTemplate.getForObject("http://marking-service/promotion", String.class);
+////        String promotionInfo = restTemplate.getForObject("http://marking/promotion", String.class);
 ////        MultiValueMap<String, Object> param = new LinkedMultiValueMap<>();
 ////        param.add("goodsInfo", goodsInfo);
 ////        param.add("pomotionInfo", promotionInfo);
@@ -84,9 +84,9 @@ public class OrderController {
         log.info("begin do order");
 
         String goodsById = goodsService.getGoodsById();
-//        String promotionById = promotionService.getPromotionById();
-//        String order = orderService.createOrder(goodsById, promotionById);
+        String promotionById = promotionService.getPromotionById();
+        String order = orderService.createOrder(goodsById, promotionById);
 
-        return goodsById;
+        return order;
     }
 }
