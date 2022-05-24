@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
@@ -29,6 +30,7 @@ import java.util.Random;
  * @createTime 2022-05-18 21:37
  */
 @Slf4j
+@RefreshScope
 @RestController
 @RequestMapping("/order")
 public class OrderController {
@@ -48,6 +50,9 @@ public class OrderController {
     @Autowired
     private IOrderService orderService;
 
+    @Value("${switch:false}")
+    private boolean fallbackSwitch;
+
 //    @Value("${goodsService.serverList}.split(',')")
 //    private List<String> goodsList;
 
@@ -61,7 +66,7 @@ public class OrderController {
 //    @GetMapping
 //    public String order() {
 //        log.info("begin do order");
-        //老旧的使用方式
+    //老旧的使用方式
 //        ServiceInstance si=loadbalancerClient.choose("goods");
 //        String url=String.format("http://%s:%s/goods",si.getHost(),si.getPort());
 //        log.info("ribbon-url:{}",url);
@@ -83,10 +88,13 @@ public class OrderController {
     public String order() {
         log.info("begin do order");
 
-        String goodsById = goodsService.getGoodsById();
-        String promotionById = promotionService.getPromotionById();
-        String order = orderService.createOrder(goodsById, promotionById);
-
-        return order;
+        if (fallbackSwitch) {
+            String goodsById = goodsService.getGoodsById();
+            String promotionById = promotionService.getPromotionById();
+            String order = orderService.createOrder(goodsById, promotionById);
+            return order;
+        } else {
+            return "服务降级";
+        }
     }
 }
