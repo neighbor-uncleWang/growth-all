@@ -12,4 +12,9 @@ public class RestTemplateConfiguration {
     public RestTemplate restTemplate(){
         return new RestTemplate();
     }
+
+    public static void main(String[] args) {
+        String goodsInfo = new RestTemplate().getForObject("url", String.class);
+
+    }
 }
