@@ -12,6 +12,7 @@
     <modules>
         <module>netty</module>
         <module>test</module>
+        <module>cloud-all-2</module>
     </modules>
 
     <properties>
