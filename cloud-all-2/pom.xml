@@ -16,7 +16,6 @@
     <version>1.0</version>
     <modules>
         <module>Gportal</module>
-        <module>service-api</module>
         <module>service-user</module>
     </modules>
 
