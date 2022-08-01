@@ -14,6 +14,7 @@ public class BizServiceApplication {
     public static void main(String[] args) throws Exception {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ProviderConfiguration.class);
         context.start();
+//        MetadataService
         System.out.println("dubbo service started");
         new CountDownLatch(1).await();
     }
