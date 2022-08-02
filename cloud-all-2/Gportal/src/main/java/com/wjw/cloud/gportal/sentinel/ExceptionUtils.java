@@ -1,7 +1,6 @@
 package com.wjw.cloud.gportal.sentinel;
 
 import com.alibaba.csp.sentinel.slots.block.BlockException;
-import org.springframework.web.bind.annotation.ControllerAdvice;
 
 /**
  * @author laoWang
@@ -10,9 +9,13 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
  */
 public class ExceptionUtils {
 
-    public static String handlerTest01Exception(BlockException e) {
-        System.out.println("Occur BlockException:" + e);
+//    public static String handlerTest01Exception(BlockException e) {
+//        System.out.println("1231321 Occur BlockException:" + e);
+//        return "1231321 Occur BlockException";
+//    }
+
+    public static String handlerTest01Exception(BlockException e){
+        System.out.println("Occur BlockedException:"+e);
         return e.getMessage();
     }
-
 }

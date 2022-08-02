@@ -5,8 +5,8 @@ import com.alibaba.csp.sentinel.slots.block.RuleConstant;
 import com.alibaba.csp.sentinel.slots.block.flow.FlowRule;
 import com.alibaba.csp.sentinel.slots.block.flow.FlowRuleManager;
 import com.google.common.collect.Lists;
-import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -22,14 +22,24 @@ public class FlowRuleInitFunc implements InitFunc {
     }
 
     private static void flowRule(){
-        List<FlowRule> ruleList = Lists.newArrayList();
-        FlowRule rule = new FlowRule();
-        rule.setRefResource("test01");
+//        List<FlowRule> ruleList = Lists.newArrayList();
+//        FlowRule rule = new FlowRule();
+//        rule.setRefResource("test01");
+//        rule.setGrade(RuleConstant.FLOW_GRADE_QPS);
+//        rule.setCount(2);
+//        ruleList.add(rule);
+//
+//        FlowRuleManager.loadRules(ruleList);
+
+
+        List<FlowRule> rules=new ArrayList<>();
+        FlowRule rule=new FlowRule();
+        rule.setResource("test01");
         rule.setGrade(RuleConstant.FLOW_GRADE_QPS);
         rule.setCount(2);
-        ruleList.add(rule);
+        rules.add(rule);
 
-        FlowRuleManager.loadRules(ruleList);
+        FlowRuleManager.loadRules(rules);
     }
 
 
