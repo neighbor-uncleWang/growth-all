@@ -23,4 +23,9 @@ public class SentinelAnnotationController {
         return sentinelAnnotationService.test01();
     }
 
+    @GetMapping("/test02")
+    public String test02(){
+        return sentinelAnnotationService.test02();
+    }
+
 }
