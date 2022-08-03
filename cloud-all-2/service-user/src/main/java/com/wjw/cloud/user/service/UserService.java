@@ -13,6 +13,8 @@ import org.apache.dubbo.config.annotation.DubboService;
  */
 @DubboService(loadbalance = "random")
 public class UserService implements IUserService {
+
+
     @Override
     public String say(String msg) {
         return "Hello," + msg + ", I' Dubbo Service";
