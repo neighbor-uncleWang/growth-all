@@ -27,12 +27,14 @@ public class OtherRuleExample {
         //配置caller为调用者
         rule.setLimitApp("caller");
         rules.add(rule);
+
         FlowRule rule1 = new FlowRule();
         rule1.setResource("hello");
         //配置other
         rule1.setLimitApp("other");
         rule1.setCount(3);
         rules.add(rule1);
+
         FlowRuleManager.loadRules(rules);
     }
 
@@ -47,5 +49,6 @@ public class OtherRuleExample {
                 System.out.println("被限流了");
             }
         }
+        System.out.println("===============");
     }
 }
