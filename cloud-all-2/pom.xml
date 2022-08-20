@@ -12,10 +12,12 @@
 
     <groupId>com.wjw.cloud</groupId>
     <artifactId>cloud-all-2</artifactId>
+    <packaging>pom</packaging>
     <version>1.0</version>
     <modules>
         <module>Gportal</module>
         <module>service-user</module>
+        <module>service-shop</module>
     </modules>
 
     <name>cloud-all-2</name>
