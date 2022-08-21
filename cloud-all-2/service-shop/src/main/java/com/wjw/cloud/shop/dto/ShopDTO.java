@@ -1,5 +1,6 @@
 package com.wjw.cloud.shop.dto;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.springframework.stereotype.Component;
 
 /**
@@ -8,7 +9,6 @@ import org.springframework.stereotype.Component;
  * @createTime 2022-08-21 09:37
  */
 @Component
-public class ShopDTO {
-
+public interface ShopDTO extends BaseMapper<Shop> {
 
 }
