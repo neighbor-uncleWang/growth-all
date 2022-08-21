@@ -16,6 +16,9 @@ dubbo:
 spring:
   application:
     name: user-service
+  datasource:
+    druid:
+      url: jdbc:mysql://127.0.0.1:3306/colud-2?useUnicode=true&characterEncoding=utf-8&useSSL=false
   cloud:
     nacos:
       discovery:

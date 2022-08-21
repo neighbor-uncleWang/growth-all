@@ -19,4 +19,6 @@ public class UserService implements IUserService {
     public String say(String msg) {
         return "Hello," + msg + ", I' Dubbo Service";
     }
+
+
 }
