@@ -4,11 +4,9 @@ import com.wjw.cloud.service.IShopService;
 import com.wjw.cloud.service.model.ShopDO;
 import com.wjw.cloud.shop.dto.Shop;
 import com.wjw.cloud.shop.dto.ShopDTO;
-import io.seata.spring.annotation.GlobalTransactional;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.beans.Transient;
 
