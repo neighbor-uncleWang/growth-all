@@ -8,7 +8,9 @@ import com.wjw.cloud.service.IShopService;
 import com.wjw.cloud.service.IUserService;
 import com.wjw.cloud.service.model.ShopDO;
 import com.wjw.cloud.service.model.UserDO;
+import io.seata.spring.annotation.GlobalTransactional;
 import org.apache.dubbo.config.annotation.DubboReference;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -30,14 +32,28 @@ public class DubboController {
     }
 
     @GetMapping("/tr/say")
+//    @GlobalTransactional
+    @GlobalTransactional(timeoutMills = 5000)
     public String trSay() {
+        //查询用户和商品
         UserDO user = helloService.getUser(1L);
         ShopDO shop = shopService.getShop(1L);
-        user.setMoney(100);
-        shop.setPrice(6);
+        //用户花钱买商品 10件
+        Integer sum = 10;
+        Integer totalPrice = shop.getPrice() * sum;
 
-//        helloService.updateUser(user);
-//        shopService.updateShop(shop);
+        Integer money = user.getMoney() - totalPrice;
+        Integer count = shop.getCount() - sum;
+
+        user.setMoney(money);
+        shop.setCount(count);
+
+        helloService.updateUser(user);
+
+        System.out.println("=========================");
+
+        shopService.updateShop(shop);
+
         return user.toString() + "=====" + shop.toString();
     }
 }

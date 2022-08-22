@@ -61,6 +61,17 @@
             <artifactId>sentinel-transport-simple-http</artifactId>
         </dependency>
 
+        <!-- Seata -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-seata</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+        </dependency>
+
     </dependencies>
 
 

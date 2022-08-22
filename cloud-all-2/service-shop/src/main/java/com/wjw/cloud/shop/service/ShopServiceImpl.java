@@ -2,14 +2,16 @@ package com.wjw.cloud.shop.service;
 
 import com.wjw.cloud.service.IShopService;
 import com.wjw.cloud.service.model.ShopDO;
-import com.wjw.cloud.service.model.UserDO;
 import com.wjw.cloud.shop.dto.Shop;
 import com.wjw.cloud.shop.dto.ShopDTO;
+import io.seata.spring.annotation.GlobalTransactional;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.beans.Transient;
+
 
 /**
  * @author laoWang
@@ -24,7 +26,6 @@ public class ShopServiceImpl implements IShopService {
 
 
     @Override
-    @Transient
     public ShopDO getShop(Long id) {
 
         Shop shop = shopDTO.selectById(id);
@@ -40,6 +41,7 @@ public class ShopServiceImpl implements IShopService {
     public int updateShop(ShopDO shopDO) {
         Shop shop = new Shop();
         BeanUtils.copyProperties(shopDO, shop);
+//        shop = null; //手动异常
         return shopDTO.updateById(shop);
     }
 }

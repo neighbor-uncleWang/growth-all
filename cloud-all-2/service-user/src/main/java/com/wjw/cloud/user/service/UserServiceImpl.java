@@ -8,9 +8,11 @@ import com.wjw.cloud.service.IUserService;
 import com.wjw.cloud.service.model.UserDO;
 import com.wjw.cloud.user.dto.User;
 import com.wjw.cloud.user.dto.UserDTO;
+import io.seata.spring.annotation.GlobalTransactional;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.beans.Transient;
 
@@ -19,7 +21,7 @@ import java.beans.Transient;
  * @version : UserService.java, v 0.1 2022年07月28日 14:53 wjw01019072 Exp $
  */
 @DubboService(loadbalance = "random")
-public class UserService implements IUserService {
+public class UserServiceImpl implements IUserService {
 
     @Autowired
     private UserDTO userDTO;

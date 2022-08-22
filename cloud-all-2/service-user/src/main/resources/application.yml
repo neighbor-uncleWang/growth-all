@@ -40,10 +40,29 @@ spring:
         password: nacos
         server-addr: 127.0.0.1:8848
         username: nacos
-  sentinel:
-    transport:
-      dashboard: 127.0.0.1:9999
-    eager: true
+    alibaba:
+      seata:
+        # seata 服务分组，要与服务端nacos-config.txt中service.vgroup_mapping的后缀对应
+        tx-service-group: my_test_tx_group
+
+seata:
+  config:
+    type: nacos
+    nacos:
+      server-addr: 127.0.0.1:8848
+      group: SEATA_GROUP
+      username: nacos
+      password: nacos
+  registry:
+    type: nacos
+    nacos:
+      cluster:
+        server-addr: 127.0.0.1:8848
+        group: SEATA_GROUP
+        username: nacos
+        password: nacos
+        application: seata-server
+
 mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true
