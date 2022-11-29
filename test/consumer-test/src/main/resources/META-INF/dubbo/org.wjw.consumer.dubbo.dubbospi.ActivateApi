@@ -1,7 +1,0 @@
-dubbo=org.wjw.consumer.dubbo.dubbospi.DubboActivate
-mybatis=org.wjw.consumer.dubbo.dubbospi.MybatisActivate
-rabbitmq1=org.wjw.consumer.dubbo.dubbospi.Rabbitmq1Activate
-rabbitmq2=org.wjw.consumer.dubbo.dubbospi.Rabbitmq2Activate
-rabbitmq=org.wjw.consumer.dubbo.dubbospi.RabbitmqActivate
-spring=org.wjw.consumer.dubbo.dubbospi.SpringActivate
-springcloud=org.wjw.consumer.dubbo.dubbospi.SpringCloudActivate
