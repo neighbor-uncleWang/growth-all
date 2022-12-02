@@ -2,7 +2,7 @@ server:
   port: 9093
 spring:
   application:
-    name: spring-service
+    name: spring-gateway
   cloud:
     nacos:
       discovery:
@@ -10,6 +10,7 @@ spring:
         password: nacos
         server-addr: 127.0.0.1:8848
         username: nacos
+
 feign:
   client:
     config:

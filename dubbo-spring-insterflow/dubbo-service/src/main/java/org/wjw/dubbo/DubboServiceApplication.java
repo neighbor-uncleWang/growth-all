@@ -4,6 +4,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
+import java.util.concurrent.CountDownLatch;
+
 /**
  * @author laoWang
  * @ClassName SpringServiceApplication.java
@@ -13,8 +15,9 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @SpringBootApplication
 public class DubboServiceApplication {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         SpringApplication.run(DubboServiceApplication.class, args);
+        new CountDownLatch(1).wait();
     }
 
 }

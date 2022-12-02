@@ -3,7 +3,7 @@ server:
 
 dubbo:
   application:
-    name: dubbo-service
+    name: dubbo-gateway
   protocol:
     id: dubbo
     name: dubbo
