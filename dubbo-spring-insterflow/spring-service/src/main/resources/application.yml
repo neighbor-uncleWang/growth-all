@@ -1,0 +1,22 @@
+server:
+  port: 9092
+spring:
+  application:
+    name: spring-service
+  cloud:
+    nacos:
+      discovery:
+        namespace: public
+        password: nacos
+        server-addr: 127.0.0.1:8848
+        username: nacos
+feign:
+  client:
+    config:
+      default:
+        connect-timeout: 100000
+        read-timeout: 100000
+  httpclient:
+    enabled: false
+  okhttp:
+    enabled: true

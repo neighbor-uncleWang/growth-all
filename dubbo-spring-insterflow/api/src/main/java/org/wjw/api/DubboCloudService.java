@@ -5,8 +5,7 @@ package org.wjw.api;
  * @ClassName DubboService.java
  * @createTime 2022-11-29 22:54
  */
-public interface DubboService {
+public interface DubboCloudService {
 
-
-    String gerService();
+    String getService();
 }

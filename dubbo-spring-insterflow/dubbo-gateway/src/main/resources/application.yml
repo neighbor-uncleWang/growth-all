@@ -1,0 +1,18 @@
+server:
+  port: 9095
+
+dubbo:
+  application:
+    name: dubbo-service
+  protocol:
+    id: dubbo
+    name: dubbo
+    port: -1
+    token: true
+  registry:
+    ## id: zk-registry
+    address: nacos://127.0.0.1:8848?username=nacos&password=nacos
+  config-center:
+    address: nacos://127.0.0.1:8848?username=nacos&password=nacos
+  metadata-report:
+    address: nacos://127.0.0.1:8848?username=nacos&password=nacos

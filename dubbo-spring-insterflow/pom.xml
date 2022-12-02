@@ -10,8 +10,9 @@
     <version>1.0</version>
     <modules>
         <module>dubbo-service</module>
-        <module>dubbo-service</module>
+        <module>dubbo-gateway</module>
         <module>spring-service</module>
+        <module>spring-gateway</module>
     </modules>
 
 
