@@ -17,15 +17,16 @@ import static org.apache.dubbo.common.constants.ClusterRules.FAIL_BACK;
 @RequestMapping("/dubboService")
 public class DubboServiceController {
 
-    @DubboReference(version = "1.0.0", cluster = FAIL_BACK)
-    private DubboCloudService dubboCloudService;
+//    @DubboReference(version = "1.0.0", cluster = FAIL_BACK)
+//    private DubboCloudService dubboCloudService;
 
 //    @Autowired
 //    private SpringCouldService springCouldService;
 
     @GetMapping("/service")
     public String service() {
-        String str = dubboCloudService.getService();
+        //dubboCloudService.getService()
+        String str = null;
         return str;
     }
 }

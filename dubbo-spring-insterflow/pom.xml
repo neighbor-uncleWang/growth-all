@@ -15,5 +15,12 @@
         <module>spring-gateway</module>
     </modules>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.wjw</groupId>
+            <artifactId>dubbo-spring-insterflow-api</artifactId>
+            <version>1.0</version>
+        </dependency>
+    </dependencies>
 
 </project>

@@ -1,8 +1,8 @@
 package org.wjw.dubbo;
 
+import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 import java.util.concurrent.CountDownLatch;
 
@@ -11,13 +11,13 @@ import java.util.concurrent.CountDownLatch;
  * @ClassName SpringServiceApplication.java
  * @createTime 2022-12-02 19:45
  */
-@EnableDiscoveryClient
+@EnableDubbo
 @SpringBootApplication
 public class DubboServiceApplication {
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws Exception {
+        //需要在NacosRegistry#notify() 508行断点才行
         SpringApplication.run(DubboServiceApplication.class, args);
-        new CountDownLatch(1).wait();
     }
 
 }
