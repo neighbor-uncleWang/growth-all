@@ -16,8 +16,9 @@ import java.util.concurrent.CountDownLatch;
 public class DubboServiceApplication {
 
     public static void main(String[] args) throws Exception {
-        //需要在NacosRegistry#notify() 508行断点才行
+        //需要在AbstractRegistry#notify() 508行断点才行
         SpringApplication.run(DubboServiceApplication.class, args);
+        new CountDownLatch(1).wait();
     }
 
 }
